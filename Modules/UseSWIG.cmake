@@ -90,7 +90,7 @@ MACRO(SWIG_GET_WRAPPER_DEPENDENCIES swigFile genWrapper language DEST_VARIABLE)
   EXECUTE_PROCESS(
     COMMAND ${SWIG_EXECUTABLE}
     -MM -MF ${swig_getdeps_depsfile} ${swig_getdeps_extra_flags}
-    ${CMAKE_SWIG_FLAGS} -${language}
+    -ignoremissing ${CMAKE_SWIG_FLAGS} -${language}
     -o ${genWrapper} ${swig_getdeps_include_dirs} ${swigFile}
     RESULT_VARIABLE swig_getdeps_result
     ERROR_VARIABLE swig_getdeps_error
